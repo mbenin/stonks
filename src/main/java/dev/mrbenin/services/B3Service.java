@@ -1,8 +1,8 @@
 package dev.mrbenin.services;
 
+import dev.mrbenin.dto.MovimentacaoB3DTO;
+
 public interface B3Service {
- 
-    
-    public Map<Integer,Row> 
+    MovimentacaoB3DTO obterOperacoesFii();
 
 }

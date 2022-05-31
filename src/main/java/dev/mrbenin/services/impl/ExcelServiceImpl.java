@@ -1,5 +1,14 @@
 package dev.mrbenin.services.impl;
 
+import dev.mrbenin.services.ExcelService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,24 +18,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import dev.mrbenin.services.ExcelService;
-
 public class ExcelServiceImpl implements ExcelService {
 
     public static final Logger logger = LogManager.getLogger(ExcelServiceImpl.class);
 
+
     @Override
     public Map<Integer, List<String>> readExcel(String filePath) {
-        
-        try { 
+        try {
             FileInputStream file = new FileInputStream(new File(filePath));
 
             Workbook workbook = new XSSFWorkbook(file);
@@ -39,8 +38,8 @@ public class ExcelServiceImpl implements ExcelService {
                 data.put(i, new ArrayList<String>());
                 for(Cell cell : row) {
                     if(!cell.toString().equals("")) {
-                        data.get(i).add(cell.toString());               
-                    } 
+                        data.get(i).add(cell.toString());
+                    }
                 }
                 i++;
             }
@@ -49,12 +48,10 @@ public class ExcelServiceImpl implements ExcelService {
         } catch (FileNotFoundException e) {
             logger.error("Arquivo não encontrado", e);
         } catch (IOException e) {
-            logger.error("Erro de IO", e); 
+            logger.error("Erro de IO", e);
         }
-        
+
         return null;
     }
 
-
-    
 }
