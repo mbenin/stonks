@@ -1,29 +1,38 @@
 package dev.mrbenin;
 
-import dev.mrbenin.dto.MovimentacaoB3DTO;
-import dev.mrbenin.services.B3Service;
-import dev.mrbenin.services.impl.B3ServiceImpl;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import dev.mrbenin.stonks.enums.EntradaSaidaEnum;
 
 /**
  * Hello world!
  *
  */
-public class App 
+@SpringBootApplication
+public class App implements CommandLineRunner
 {
 
-    private static final Logger logger = LogManager.getLogger(App.class);         
+    private static final Logger LOG = LoggerFactory.getLogger(App.class);         
 
+  
     public static void main( String[] args )
     {
-    
-        String file = "/mnt/c/Users/mbeni/OneDrive/Documentos/Investimentos/movimentacao-01112019-31102020.xlsx";
-        B3Service b3service = new B3ServiceImpl();
-
-        }
-    
+        LOG.info("Iniciando a aplicação");
+        SpringApplication.run(App.class, args);
+        LOG.info("Final da aplicação");
     }
-
+    
+    
+    @Override
+    public void run(String... args) throws Exception {
+        /*String file = "/mnt/c/Users/mbeni/OneDrive/Documentos/Investimentos/movimentacao-01112019-31102020.xlsx";
+        B3Service b3service = new B3Service();
+        b3service.obterOperacoesFii(file);*/
+        System.out.println(EntradaSaidaEnum.valueByField("Debito"));
+    }
 
 }

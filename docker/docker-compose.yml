@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  db:
+    container_name: container-stonks-db
+    image: mariadb:latest
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=stonks00
+      - MYSQL_DATABASE=stonksDb
+      - MYSQL_USER=stonksUser
+      - MYSQL_PASSWORD=stonks00
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/db:/var/lib/mysql

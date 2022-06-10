@@ -1,0 +1,7 @@
+dev/mrbenin/App.class
+dev/mrbenin/stonks/services/ExcelService.class
+dev/mrbenin/stonks/services/B3Service.class
+dev/mrbenin/stonks/enums/EntradaSaidaEnum.class
+dev/mrbenin/stonks/dto/MovimentacaoB3DTO.class
+dev/mrbenin/stonks/enums/MovimentacaoEnum.class
+dev/mrbenin/stonks/entity/Cotacao.class

@@ -1,0 +1,7 @@
+/home/max/dev/max/stonks/stonks/src/main/java/dev/mrbenin/stonks/enums/EntradaSaidaEnum.java
+/home/max/dev/max/stonks/stonks/src/main/java/dev/mrbenin/stonks/entity/Cotacao.java
+/home/max/dev/max/stonks/stonks/src/main/java/dev/mrbenin/stonks/services/B3Service.java
+/home/max/dev/max/stonks/stonks/src/main/java/dev/mrbenin/stonks/dto/MovimentacaoB3DTO.java
+/home/max/dev/max/stonks/stonks/src/main/java/dev/mrbenin/App.java
+/home/max/dev/max/stonks/stonks/src/main/java/dev/mrbenin/stonks/enums/MovimentacaoEnum.java
+/home/max/dev/max/stonks/stonks/src/main/java/dev/mrbenin/stonks/services/ExcelService.java
